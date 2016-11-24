@@ -13,7 +13,7 @@ public class GetData implements IService {
 		// TODO Auto-generated method stub
 		
 		System.out.println(params);
-		return null;
+		return params;
 	}
 
 }

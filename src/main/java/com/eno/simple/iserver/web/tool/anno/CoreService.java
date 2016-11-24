@@ -29,18 +29,18 @@ public class CoreService {
 	 * @return
 	 * @throws Exception
 	 */
-	public static String executeAndReturnJsonString(ServletContext servletContext,Map<String, String> paramters)
+	public static String executeAndReturnJsonString(ServletContext servletContext, Map<String, String> paramters)
 			throws Exception {
 
 		String beanName = paramters.get(Constants.ANNO_BEAN);
-		//解析出pkgList
- 		List<String> pkgList = null;
-		if(AnnoServiceConfigParser.init(servletContext)){
+		paramters.remove(Constants.ANNO_BEAN);	// remove Constants.ANNO_BEAN
+		// 解析出pkgList
+		List<String> pkgList = null;
+		if (AnnoServiceConfigParser.init(servletContext)) {
 			pkgList = AnnoServiceConfigParser.getPkgList();
 		}
-		
 		String clazzName = ServiceBeanFactory.getClazzName(pkgList, beanName);
 		return ServiceBeanFactory.execute(clazzName, paramters);
 	}
- 
+
 }
