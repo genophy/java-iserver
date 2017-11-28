@@ -78,5 +78,5 @@ public class TestService  implements IService{ // json返回方式
  
 
 ##关于作者
-* [qq空间](http://user.qzone.qq.com/945891539)
+* [twitter](https://twitter.com/genophy)
  
